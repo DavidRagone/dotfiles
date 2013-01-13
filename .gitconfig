@@ -1,9 +1,0 @@
-[user]
-	name = DavidRagone
-	email = david@ouya.tv
-[credential]
-	helper = osxkeychain
-[color]
-	ui = true
-[push]
-	default = simple
