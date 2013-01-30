@@ -60,6 +60,7 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'Lokaltog/vim-powerline.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'mileszs/ack.vim'
+Bundle 'jeetsukumaran/vim-buffergator.git'
 
 
 filetype plugin indent on
