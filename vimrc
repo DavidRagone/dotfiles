@@ -1,14 +1,11 @@
 syntax enable
-"call pathogen#infect()
-
 
 " mappings
 imap jj <Esc>
-map ; :
-  " Yank text to the OS X clipboard
+" Yank text to the OS X clipboard
 noremap <leader>y "*y
 noremap <leader>yy "*Y
-  " Preserve indentation while pasting text from the OS X clipboard
+" Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 " sets
@@ -29,12 +26,14 @@ set smartcase     " ... unless they contain at least one capital letter
 
 " NERDTree stuff
 let NERDTreeQuitOnOpen = 0
-"  " Open NERDTree if VIM opens with no files
-autocmd vimenter * if !argc() | NERDTree | endif
-"  " \d opens a NERDTree that closes on file selection
+" Open NERDTree if VIM opens with no files
+"autocmd vimenter * if !argc() | NERDTree | endif
+" \d opens a NERDTree that closes on file selection
 nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
-"  " \D opens a NERDTree that stays open on file selection
+" \D opens a NERDTree that stays open on file selection
 nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
+" toggle visibility of NERDTree
+:nmap \e :NERDTreeToggle<CR>
 
 " Powerline settings
 set nocompatible   " Disable vi-compatibility
@@ -42,9 +41,23 @@ set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
 set t_Co=256       " Explicitly tell vim that the terminal supports 256
 
+" ctrlp settings
+":nmap ; :CtrlPBuffer<CR>
+" map opening of ctrlp to \t
+:let g:ctrlp_map = '<Leader>t'
+:let g:ctrlp_match_window_bottom = 0
+" window on top
+:let g:ctrlp_match_window_reversed = 0
+:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+:let g:ctrlp_working_path_mode = 0
+:let g:ctrlp_dotfiles = 0
+:let g:ctrlp_switch_buffer = 0
+
 " Colors
 let g:Powerline_symbols='fancy'
 
+" Highlight trailing whitespace
+highlight ExtraWhitespace guibg=purple
 
 " VUNDLE!
 filetype off
@@ -58,9 +71,13 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'Lokaltog/vim-powerline.git'
+Bundle 'vim-ruby/vim-ruby.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'mileszs/ack.vim'
 Bundle 'jeetsukumaran/vim-buffergator.git'
+Bundle 'slim-template/vim-slim.git'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'kchmck/vim-coffee-script.git'
 
 
 filetype plugin indent on
