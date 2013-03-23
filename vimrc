@@ -23,6 +23,9 @@ set incsearch     " incremental searching
 set ignorecase    " searches are case insensitive...
 set smartcase     " ... unless they contain at least one capital letter
 
+" Highlight current line
+"hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorLine cterm=NONE ctermbg=236
 
 " NERDTree stuff
 let NERDTreeQuitOnOpen = 0
@@ -55,6 +58,9 @@ set t_Co=256       " Explicitly tell vim that the terminal supports 256
 
 " Colors
 let g:Powerline_symbols='fancy'
+
+" Silence is golden
+set vb t_vb=
 
 " Highlight trailing whitespace
 highlight ExtraWhitespace guibg=purple
