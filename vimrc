@@ -1,7 +1,7 @@
 syntax enable
 
 " mappings
-imap jj <Esc>
+"imap jj <Esc>
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
 noremap <leader>yy "*Y
