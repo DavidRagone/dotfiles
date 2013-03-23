@@ -84,6 +84,7 @@ Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'kchmck/vim-coffee-script.git'
+Bundle 'jgdavey/vim-turbux.git'
 
 
 filetype plugin indent on
