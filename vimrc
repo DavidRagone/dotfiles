@@ -75,14 +75,13 @@ Bundle 'gmarik/vundle'
 
 " my bundles
 Bundle 'scrooloose/nerdtree.git'
-Bundle 'scrooloose/syntastic.git'
 Bundle 'Lokaltog/vim-powerline.git'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'scrooloose/syntastic.git'
 Bundle 'vim-ruby/vim-ruby.git'
 Bundle 'tpope/vim-rails.git'
-Bundle 'mileszs/ack.vim'
-Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'slim-template/vim-slim.git'
-Bundle 'kien/ctrlp.vim.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jgdavey/vim-turbux.git'
 
