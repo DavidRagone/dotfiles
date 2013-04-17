@@ -45,9 +45,9 @@ set encoding=utf-8 " Necessary to show unicode glyphs
 set t_Co=256       " Explicitly tell vim that the terminal supports 256
 
 " ctrlp settings
-":nmap ; :CtrlPBuffer<CR>
+:nmap ; :CtrlPBuffer<CR>
 " map opening of ctrlp to \t
-:let g:ctrlp_map = '<Leader>t'
+":let g:ctrlp_map = '<Leader>t'
 :let g:ctrlp_match_window_bottom = 0
 " window on top
 :let g:ctrlp_match_window_reversed = 0
