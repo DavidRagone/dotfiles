@@ -1,14 +1,15 @@
 syntax enable
 
-" mappings
-"imap jj <Esc>
+" MAPPINGS
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
 noremap <leader>yy "*Y
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+" Index ctags from any project, including those outside Rails
+map <Leader>ct :!ctags -R .<CR>
 
-" sets
+" SETS
 set number        " Show line numbers
 set tabstop=4     " Tab characters = 4 spaces when displayed
 set shiftwidth=2  " Use 2 spaces for each insertion of (auto)indent
@@ -16,12 +17,20 @@ set softtabstop=2 " Tabs 'count for' 2 spaces when editing (fake tabs)
 set expandtab     " <tab> -> spaces in insert mode
 set smarttab      " Smart tabbing!
 set scrolloff=10  " Mininum number of screen lines to keep above/below the cursor
+set list listchars=tab:»·,trail:· " Display extra whitespace
 
 " Searching (via https://github.com/seenmyfate/vim/blob/master/vimrc)
 set hlsearch      " highlight matches
 set incsearch     " incremental searching
 set ignorecase    " searches are case insensitive...
 set smartcase     " ... unless they contain at least one capital letter
+
+" Set syntax highlighting for specific file types
+au BufRead,BufNewFile *.md set filetype=markdown
+" Enable spellchecking for Markdown
+au BufRead,BufNewFile *.md setlocal spell
+" Automatically wrap at 80 characters for Markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Highlight current line
 "hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
