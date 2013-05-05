@@ -65,6 +65,11 @@ set t_Co=256       " Explicitly tell vim that the terminal supports 256
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
 
+" Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+
 " Colors
 let g:Powerline_symbols='fancy'
 
@@ -93,6 +98,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jgdavey/vim-turbux.git'
+Bundle 'thoughtbot/vim-rspec'
 
 
 filetype plugin indent on
