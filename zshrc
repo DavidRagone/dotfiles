@@ -5,6 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 export EDITOR="vim"
 bindkey -v
 unsetopt correct_all
+unsetopt correct
 
 # attempt to stop auto-window naming
 DISABLE_AUTO_TITLE=true
@@ -51,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 PATH=$PATH:/usr/X11/bin
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools
 
 
 
