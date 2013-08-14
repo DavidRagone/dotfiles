@@ -10,7 +10,8 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 map <Leader>ct :!ctags -R .<CR>
 
 " SETS
-set number        " Show line numbers
+set relativenumber        " Show line numbers
+set hidden        " Allows hiding unsaved buffers
 set tabstop=4     " Tab characters = 4 spaces when displayed
 set shiftwidth=2  " Use 2 spaces for each insertion of (auto)indent
 set softtabstop=2 " Tabs 'count for' 2 spaces when editing (fake tabs)
@@ -66,6 +67,7 @@ set t_Co=256       " Explicitly tell vim that the terminal supports 256
 :let g:ctrlp_switch_buffer = 0
 
 " Rspec.vim mappings
+let g:rspec_command = "Dispatch zeus rspec {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
@@ -98,6 +100,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jgdavey/vim-turbux.git'
+Bundle 'tpope/vim-dispatch'
 Bundle 'thoughtbot/vim-rspec'
 
 
