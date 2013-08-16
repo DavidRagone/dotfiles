@@ -53,6 +53,8 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:/usr/X11/bin
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools
 
+# This loads NVM
+[[ -s /Users/dmragone/.nvm/nvm.sh ]] && . /Users/dmragone/.nvm/nvm.sh
 
 
 ### Added by the Heroku Toolbelt
