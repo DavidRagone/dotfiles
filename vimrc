@@ -36,6 +36,12 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 "hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 hi CursorLine cterm=NONE ctermbg=236
 
+" Store swap files in fixed location, not current directory.
+set dir=~/.vimswap//,/var/tmp//,/tmp//,.
+
+
+" ---- PLUGIN STUFF BELOW ----
+
 " NERDTree stuff
 let NERDTreeQuitOnOpen = 0
 " Open NERDTree if VIM opens with no files
