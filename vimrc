@@ -108,6 +108,8 @@ Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jgdavey/vim-turbux.git'
 Bundle 'tpope/vim-dispatch'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'slim-template/vim-slim'
 
 
 filetype plugin indent on
