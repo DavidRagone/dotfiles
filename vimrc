@@ -1,4 +1,8 @@
+set re=1
 syntax enable
+syntax sync minlines=256
+set nocursorcolumn
+set nocursorline
 
 " MAPPINGS
 " Yank text to the OS X clipboard
@@ -9,7 +13,7 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
 
-" SETS
+"" SETS
 set relativenumber        " Show line numbers
 set hidden        " Allows hiding unsaved buffers
 set tabstop=4     " Tab characters = 4 spaces when displayed
@@ -19,6 +23,13 @@ set expandtab     " <tab> -> spaces in insert mode
 set smarttab      " Smart tabbing!
 set scrolloff=10  " Mininum number of screen lines to keep above/below the cursor
 set list listchars=tab:»·,trail:· " Display extra whitespace
+"set fdm=syntax
+set fdm=indent
+"http://superuser.com/questions/302186/vim-scrolls-very-slow-when-a-line-is-to-long
+set synmaxcol=200
+set ttyfast " u got a fast terminal
+set ttyscroll=3
+set lazyredraw " to avoid scrolling problems
 
 " Searching (via https://github.com/seenmyfate/vim/blob/master/vimrc)
 set hlsearch      " highlight matches
@@ -34,8 +45,8 @@ au BufRead,BufNewFile *.md setlocal spell
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Highlight current line
-"hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorLine cterm=NONE ctermbg=236
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+"hi CursorLine cterm=NONE ctermbg=236
 
 " Store swap files in fixed location, not current directory.
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
@@ -103,13 +114,13 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'vim-ruby/vim-ruby.git'
 Bundle 'tpope/vim-rails.git'
-Bundle 'slim-template/vim-slim.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jgdavey/vim-turbux.git'
 Bundle 'tpope/vim-dispatch'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'slim-template/vim-slim'
+Bundle 'tpope/vim-fugitive'
 
 
 filetype plugin indent on
