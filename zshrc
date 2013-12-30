@@ -24,6 +24,16 @@ ZSH_THEME="dragone"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gac="git add . && git commit -m 'WIP'"
+alias c="clear"
+alias gs="git status"
+alias gco="git checkout"
+
+
+# Functions
+top10() {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -20
+}
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
