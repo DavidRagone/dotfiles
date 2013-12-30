@@ -98,6 +98,10 @@ set vb t_vb=
 " Highlight trailing whitespace
 highlight ExtraWhitespace guibg=purple
 
+" Ctags
+" regenerate the tags file, including project gems
+map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+
 " VUNDLE!
 filetype off
 set rtp+=~/.vim/bundle/vundle
