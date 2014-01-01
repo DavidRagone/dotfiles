@@ -84,10 +84,12 @@ set t_Co=256       " Explicitly tell vim that the terminal supports 256
 :let g:ctrlp_switch_buffer = 0
 
 " Rspec.vim mappings
-let g:rspec_command = "Dispatch zeus rspec {spec}"
+let g:rspec_command = "Dispatch rspec {spec}"
+"Dispatch zeus rspec {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Colors
 let g:Powerline_symbols='fancy'
