@@ -28,7 +28,13 @@ alias gac="git add . && git commit -m 'WIP'"
 alias c="clear"
 alias gs="git status"
 alias gco="git checkout"
+alias gdm='git diff master'
+alias gd='git diff'
+alias grm='git rebase -i master'
 
+# ZSH Local = where to put everything not to be shared across machines
+# Note that env will now be shared across machines, so not safe for passwords
+source ~/.zsh-local
 
 # Functions
 top10() {
@@ -56,15 +62,20 @@ top10() {
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+# plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools/usr/X11/bin"
-eval "$(rbenv init -)"
+export PATH="~/.rbenv/bin:/usr/local/mysql:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools/usr/X11/bin"
+
+##  MOVE TO LOCAL ##
+# Disabling rbenv at Goodreads
+# eval "$(rbenv init -)"
+### Added by the Heroku Toolbelt
+# export PATH="/usr/local/heroku/bin:$PATH"
 
 # This loads NVM
 [[ -s /Users/dmragone/.nvm/nvm.sh ]] && . /Users/dmragone/.nvm/nvm.sh
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
