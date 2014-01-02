@@ -2,3 +2,6 @@
 	ui = true
 [user]
 	name = DavidRagone
+	email = dmragone@gmail.com
+[push]
+	default = simple
