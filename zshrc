@@ -28,6 +28,7 @@ alias gac="git add . && git commit -m 'WIP'"
 alias c="clear"
 alias gs="git status"
 alias gco="git checkout"
+alias gcm="git checkout master"
 alias gdm='git diff master'
 alias gd='git diff'
 alias grm='git rebase -i master'
