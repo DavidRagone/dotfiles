@@ -68,12 +68,6 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="~/.rbenv/bin:/usr/local/mysql:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools/usr/X11/bin"
 
-##  MOVE TO LOCAL ##
-# Disabling rbenv at Goodreads
-# eval "$(rbenv init -)"
-### Added by the Heroku Toolbelt
-# export PATH="/usr/local/heroku/bin:$PATH"
-
 # This loads NVM
 [[ -s /Users/dmragone/.nvm/nvm.sh ]] && . /Users/dmragone/.nvm/nvm.sh
 
