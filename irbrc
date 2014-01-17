@@ -1,6 +1,6 @@
 require 'irb/completion'
 
-favorite_gems = ["awesome_print", "allocation_counter"]
+favorite_gems = ["awesome_print", "allocation_counter", "pry-remote"]
 def gemset
   gemsets = ENV['GEM_PATH'].split(':')
   # Take first non-global
