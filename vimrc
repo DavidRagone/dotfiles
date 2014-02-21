@@ -11,7 +11,7 @@ noremap <leader>yy "*Y
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 " Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
+map <Leader>rt :!ctags --tag-relative --exclude=.git --languages=ruby -R * `rvm gemdir`/gems/*
 
 "" SETS
 set relativenumber        " Show line numbers
@@ -23,7 +23,6 @@ set expandtab     " <tab> -> spaces in insert mode
 set smarttab      " Smart tabbing!
 set scrolloff=10  " Mininum number of screen lines to keep above/below the cursor
 set list listchars=tab:»·,trail:· " Display extra whitespace
-"set fdm=syntax
 set fdm=indent
 "http://superuser.com/questions/302186/vim-scrolls-very-slow-when-a-line-is-to-long
 set synmaxcol=200
@@ -52,28 +51,43 @@ hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 
-" ---- PLUGIN STUFF BELOW ----
+" Colors
+let g:Powerline_symbols='fancy'
 
+" Silence is golden
+set vb t_vb=
+
+" Highlight trailing whitespace
+highlight ExtraWhitespace guibg=purple
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" NERDTree settings """""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree stuff
 let NERDTreeQuitOnOpen = 0
-" Open NERDTree if VIM opens with no files
-"autocmd vimenter * if !argc() | NERDTree | endif
-" \d opens a NERDTree that closes on file selection
-nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
-" \D opens a NERDTree that stays open on file selection
-nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
-" toggle visibility of NERDTree
-:nmap \e :NERDTreeToggle<CR>
+nmap \e :NERDTreeToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" END NERDTree settings """""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Powerline settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" Powerline settings """"""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
 set t_Co=256       " Explicitly tell vim that the terminal supports 256
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" END Powerline settings """"""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ctrlp settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" ctrlp settings """"""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :nmap ; :CtrlPBuffer<CR>
-" map opening of ctrlp to \t
+" map opening of ctrlp to \k
 :let g:ctrlp_map = '<Leader>k'
 :let g:ctrlp_match_window_bottom = 0
 " window on top
@@ -84,37 +98,48 @@ set t_Co=256       " Explicitly tell vim that the terminal supports 256
 :let g:ctrlp_switch_buffer = 0
 " John Lee recommendations
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" END ctrlp settings """"""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Rspec.vim mappings
-let g:rspec_command = "Dispatch rspec {spec}"
-"Dispatch zeus rspec {spec}"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" Ruby helpers """"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" When inside a method, leader + d to jump up to the name of the method
+"   (useful when inside some horrendously long method definition).
+"   To return to previous line, hit single-quote single-quote ('')
+nmap <leader>d ?^\s*def <CR> :let @/ = '' <CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" END Ruby helpers """"""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" Rspec.vim mappings """""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:rspec_command = "Dispatch zeus rspec {spec}"
+"let g:rspec_command = "Dispatch rspec {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+"map <Leader>a :call RunAllSpecs()<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" END Rspec.vim mappings """""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Colors
-let g:Powerline_symbols='fancy'
-
-" Silence is golden
-set vb t_vb=
-
-" Highlight trailing whitespace
-highlight ExtraWhitespace guibg=purple
-
-" Ctags
-" regenerate the tags file, including project gems
-map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
-
-" VUNDLE!
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" Vundle Settings """"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" END Vundle Settings """"""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" let Vundle manage Vundle
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" Plugin list """"""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'gmarik/vundle'
-
-" my bundles
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'Lokaltog/vim-powerline.git'
 Bundle 'mileszs/ack.vim'
@@ -129,6 +154,8 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'slim-template/vim-slim'
 Bundle 'tpope/vim-fugitive'
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" END Plugin list """"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 filetype plugin indent on
