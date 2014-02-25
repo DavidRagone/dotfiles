@@ -10,9 +10,6 @@ noremap <leader>y "*y
 noremap <leader>yy "*Y
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
-" Index ctags from any project, including those outside Rails
-map <Leader>rt :!ctags --tag-relative --exclude=.git --languages=ruby -R * `rvm gemdir`/gems/*
-
 "" SETS
 set relativenumber        " Show line numbers
 set hidden        " Allows hiding unsaved buffers
@@ -60,7 +57,14 @@ set vb t_vb=
 " Highlight trailing whitespace
 highlight ExtraWhitespace guibg=purple
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""" Ctags settings """"""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tags=.tags
+map <Leader>rt :!ctags --tag-relative --exclude=.git --languages=ruby -R * `rvm gemdir`/gems/*
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""" END Ctags settings """"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""" NERDTree settings """""""""""""""""""""""""""""""""
