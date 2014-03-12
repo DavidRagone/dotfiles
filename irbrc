@@ -20,4 +20,4 @@ if defined?(::Bundler)
   end
 end
 
-favorite_gems.each { |gem| require gem }
+favorite_gems.each { |gem| puts "requiring #{gem}"; require gem }
