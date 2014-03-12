@@ -12,6 +12,7 @@ noremap <leader>yy "*Y
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 "" SETS
 set relativenumber        " Show line numbers
+set number
 set hidden        " Allows hiding unsaved buffers
 set tabstop=4     " Tab characters = 4 spaces when displayed
 set shiftwidth=2  " Use 2 spaces for each insertion of (auto)indent
