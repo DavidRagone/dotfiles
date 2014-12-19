@@ -1,18 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# from text-triumvirate post
-export EDITOR="vim"
-bindkey -v
-unsetopt correct_all
-unsetopt correct
-
-# attempt to stop auto-window naming
-DISABLE_AUTO_TITLE=true
-
-# increase scrollback lines
-set -g history-limit 10000
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -32,10 +20,6 @@ alias gcm="git checkout master"
 alias gdm='git diff master'
 alias gd='git diff'
 alias grm='git rebase -i master'
-
-# ZSH Local = where to put everything not to be shared across machines
-# Note that env will now be shared across machines, so not safe for passwords
-source ~/.zsh-local
 
 # Functions
 top10() {
@@ -67,10 +51,24 @@ top10() {
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH="~/.rbenv/bin:/usr/local/mysql:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools/usr/X11/bin"
+export PATH="~/.rbenv/bin:/usr/local/mysql:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools/usr/X11/bin:$HOME/.rvm/bin"
+
+# ZSH Local = where to put everything not to be shared across machines
+# Note that env will now be shared across machines, so not safe for passwords
+source ~/.zsh-local
+
+# from text-triumvirate post
+export EDITOR="vim"
+bindkey -v
+unsetopt correct_all
+unsetopt correct
+
+# attempt to stop auto-window naming
+DISABLE_AUTO_TITLE=true
+
+# increase scrollback lines
+set -g history-limit 10000
 
 # This loads NVM
 [[ -s /Users/dmragone/.nvm/nvm.sh ]] && . /Users/dmragone/.nvm/nvm.sh
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
