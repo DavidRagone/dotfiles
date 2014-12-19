@@ -1,6 +1,7 @@
-require 'irb/completion'
+#require 'irb/completion'
+require 'pry'
 
-favorite_gems = ["awesome_print", "allocation_counter", "pry-remote"]
+favorite_gems = ["awesome_print", "allocation_counter"]#, "pry-remote"]
 def gemset
   gemsets = ENV['GEM_PATH'].split(':')
   # Take first non-global
@@ -21,3 +22,4 @@ if defined?(::Bundler)
 end
 
 favorite_gems.each { |gem| puts "requiring #{gem}"; require gem }
+#Pry.start
