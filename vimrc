@@ -109,10 +109,10 @@
 "****
 "** vimux mappings
   " configure vimux-ruby-test so ruby tests can run in 20% horizontal pane.
-  let g:vimux_ruby_cmd_unit_test = "./bin/testunit"
+  let g:vimux_ruby_cmd_unit_test = "ruby"
   let g:vimux_ruby_cmd_all_tests = "rake test:parallel"
   " Run the current file with testunit
-  map <Leader>Tf :call VimuxRunCommand("clear; ./bin/testunit " . bufname("%"))<CR>
+  map <Leader>Tf :call VimuxRunCommand("clear; ruby " . bufname("%"))<CR>
   " Run the current test
   map <Leader>Ts :RunRubyFocusedTest<CR>
   " Run all rails tests
