@@ -26,6 +26,13 @@ top10() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -20
 }
 
+# Update ctags for ruby files
+tagit() {
+  echo "Updating ctags"
+  ctags --tag-relative --exclude=.git --languages=ruby -R * `rvm gemdir`/gems/*
+  echo "Ctags updated"
+}
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
