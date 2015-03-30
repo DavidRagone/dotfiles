@@ -7,3 +7,5 @@
 For each of: .gitconfig, .oh-my-zsh/, .tmux.conf, .vimrc, .zprofile, .zshrc, either remove or rename (e.g. .gitconfig-old)
 ####Symlink each of those files (or folder in the case of .oh-my-zsh/) to the dotfile repo
 ```ln -s /actual-file ~/file-you-want-symlinked```
+####Switch to zsh
+`chsh -s /bin/zsh`
