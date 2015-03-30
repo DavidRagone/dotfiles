@@ -133,12 +133,6 @@
   map <Leader>vz :call VimuxZoomRunner()<CR>
 
 "****
-"** Vundle Settings
-  filetype off
-  set rtp+=~/.vim/bundle/vundle
-  call vundle#rc()
-
-"****
 "** Copy/Paste Settings
   " Yank text to the OS X clipboard
   noremap <leader>y "*y
@@ -147,12 +141,21 @@
   noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "****
+"** Vundle Settings
+  filetype off "old?
+
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  " " alternatively, pass a path where Vundle should install plugins
+  " "call vundle#begin('~/some/path/here')
+
+"****
 "** Plugin List
   Bundle 'benmills/vimux'
   Bundle 'briancollins/vim-jst'
-  Bundle 'gmarik/vundle'
+  Bundle 'gmarik/Vundle.vim'
   Bundle 'jgdavey/vim-turbux.git'
-  Bundle 'kchmck/vim-coffee-script.git'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'kien/ctrlp.vim.git'
   Bundle 'Lokaltog/vim-powerline.git'
@@ -167,5 +170,6 @@
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-rails.git'
   Bundle 'vim-ruby/vim-ruby.git'
-
-filetype plugin indent on
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
+  filetype plugin indent on    " required
