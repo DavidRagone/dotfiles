@@ -58,8 +58,6 @@ tagit() {
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
-
 # ZSH Local = where to put everything not to be shared across machines
 # Note that env will now be shared across machines, so not safe for passwords
 source ~/.zsh-local
@@ -80,6 +78,7 @@ set -g history-limit 10000
 [[ -s /Users/dmragone/.nvm/nvm.sh ]] && . /Users/dmragone/.nvm/nvm.sh
 
 export PATH="$HOME/.bin:$PATH"
+export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
