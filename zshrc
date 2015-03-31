@@ -58,7 +58,7 @@ tagit() {
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH="~/.rbenv/bin:/usr/local/mysql:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:~/adt-bundle/adt-bundle-mac-x86_64-20130219/sdk/tools/usr/X11/bin:$HOME/.rvm/bin"
+export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # ZSH Local = where to put everything not to be shared across machines
 # Note that env will now be shared across machines, so not safe for passwords
