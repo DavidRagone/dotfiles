@@ -12,14 +12,24 @@ ZSH_THEME="dragone"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias gac="git add . && git commit -m 'WIP'"
 alias c="clear"
+alias wip="git add . && git commit -m 'WIP'"
+
+# Git aliases & functions
 alias gs="git status"
 alias gco="git checkout"
 alias gcm="git checkout master"
 alias gdm='git diff master'
 alias gd='git diff'
-alias grm='git rebase -i master'
+alias grim='git rebase -i master'
+alias gib="git branch"
+TODO() {
+  # Prints the TODOs entered in code since the first time the current branch split off of master
+  gd $(git log master... --oneline | tail -1 | cut -f 1 -d " ") | grep TODO
+}
+upstream() {
+  git push -u origin `git symbolic-ref --short HEAD`
+}
 
 # Functions
 top10() {
