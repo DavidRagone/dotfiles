@@ -103,22 +103,20 @@
 "** git mappings
   " Add all
   map <Leader>ga :! git add -A .
+  " Add using patch
+  map <Leader>gap :! git add -A -p
   " Commit
   map <Leader>ga :! git commit
 
 "****
 "** vimux mappings
   " configure vimux-ruby-test so ruby tests can run in 20% horizontal pane.
-  let g:vimux_ruby_cmd_unit_test = "ruby"
-  let g:vimux_ruby_cmd_all_tests = "rake test:parallel"
-  " Run the current file with testunit
-  map <Leader>Tf :call VimuxRunCommand("clear; ruby " . bufname("%"))<CR>
+  let g:vimux_ruby_cmd_unit_test = "rspec"
+  let g:vimux_ruby_cmd_all_tests = "rake"
+  " Run the current file with rspec
+  map <Leader>Tf :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
   " Run the current test
   map <Leader>Ts :RunRubyFocusedTest<CR>
-  " Run all rails tests
-  map <Leader>Ta :RunAllRailsTests<CR>
-  " Prompt for a command to run
-  map <Leader>vp :VimuxPromptCommand<CR>
   " Run last command executed by VimuxRunCommand
   map <Leader>vl :VimuxRunLastCommand<CR>
   " Inspect runner pane
