@@ -9,3 +9,6 @@ For each of: .gitconfig, .oh-my-zsh/, .tmux.conf, .vimrc, .zprofile, .zshrc, eit
 ```ln -s /actual-file ~/file-you-want-symlinked```
 ####Switch to zsh
 `chsh -s /bin/zsh`
+
+## TODO
+* Write script for auto symlinking and intalling dependencies
