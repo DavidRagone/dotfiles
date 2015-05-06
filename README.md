@@ -12,3 +12,4 @@ For each of: .gitconfig, .oh-my-zsh/, .tmux.conf, .vimrc, .zprofile, .zshrc, eit
 
 ## TODO
 * Write script for auto symlinking and intalling dependencies
+* Add install step for silver searcher?
