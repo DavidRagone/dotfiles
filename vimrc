@@ -3,6 +3,7 @@
 
 "****
 "** General settings
+  set nocompatible   " Disable vi-compatibility
   let mapleader = ","
   color vividchalk
   set guifont=monaco:h16
@@ -40,7 +41,7 @@
   " TODO - add helper to clear out all tmp files (for when computer has to be
   "   hard-restarted)
   " Highlight current line
-  hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+  "hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
   "hi CursorLine cterm=NONE ctermbg=236
   " Set syntax highlighting for specific file types
   au BufRead,BufNewFile *.md set filetype=markdown
@@ -91,8 +92,6 @@
   nnoremap <C-L> <C-W><C-L>
   nnoremap <C-H> <C-W><C-H>
 
-
-
 "****
 "** Auto save/load
   set autoread " Reload files changed outside vim
@@ -114,10 +113,10 @@
   endif
 
 " Highlight after 80 characters
-  augroup vimrc_autocmds
-    autocmd BufEnter * highlight OverLength ctermfg=red guibg=#592929
-    autocmd BufEnter * match OverLength /\%80.*/
-  augroup END
+  "augroup vimrc_autocmds
+  "  autocmd BufEnter * highlight OverLength ctermfg=red guibg=#592929
+  "  autocmd BufEnter * match OverLength /\%80.*/
+  "augroup END
 
 "****
 "** Turn off backup files
@@ -156,7 +155,6 @@
 
 "****
 "** Powerline settings
-  set nocompatible   " Disable vi-compatibility
   set laststatus=2   " Always show the statusline
   set encoding=utf-8 " Necessary to show unicode glyphs
   set t_Co=256       " Explicitly tell vim that the terminal supports 256
