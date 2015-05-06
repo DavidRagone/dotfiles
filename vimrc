@@ -130,6 +130,8 @@
   set incsearch     " incremental searching
   set ignorecase    " searches are case insensitive...
   set smartcase     " ... unless they contain at least one capital letter
+  " Use silver searcher https://github.com/ggreer/the_silver_searcher#vim
+  let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "****
 "** Tab completion
