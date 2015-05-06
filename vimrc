@@ -1,3 +1,6 @@
+" Read one day and make more changes:
+" http://mixandgo.com/blog/vim-config-for-rails-ninjas
+
 "****
 "** General settings
   set re=1
