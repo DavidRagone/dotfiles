@@ -168,6 +168,8 @@
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-rails.git'
   Bundle 'vim-ruby/vim-ruby.git'
+  Bundle 'elixir-lang/vim-elixir'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
   filetype plugin indent on    " required
+
