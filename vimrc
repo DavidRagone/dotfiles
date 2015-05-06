@@ -188,15 +188,6 @@
   map <silent> ,h :s/:\(\w\+\) =>/\1:/g<CR>j
 
 "****
-"** Rspec.vim mappings (disabled due to vimux conflict)
-  "let g:rspec_command = "Dispatch zeus rspec {spec}"
-  "let g:rspec_command = "Dispatch rspec {spec}"
-  "map <Leader>t :call RunCurrentSpecFile()<CR>
-  "map <Leader>s :call RunNearestSpec()<CR>
-  "map <Leader>l :call RunLastSpec()<CR>
-  "map <Leader>a :call RunAllSpecs()<CR>
-
-"****
 "** git mappings
   " Add all
   map <Leader>ga :! git add -A .
@@ -206,26 +197,12 @@
   map <Leader>ga :! git commit
 
 "****
-"** vimux mappings
-  " configure vimux-ruby-test so ruby tests can run in 20% horizontal pane.
-  let g:vimux_ruby_cmd_unit_test = "rspec"
-  let g:vimux_ruby_cmd_all_tests = "rake"
-  " Run the current file with rspec
-  map <Leader>Tf :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
-  " Run the current test
-  map <Leader>Ts :RunRubyFocusedTest<CR>
-  " Run last command executed by VimuxRunCommand
-  map <Leader>vl :VimuxRunLastCommand<CR>
-  " Inspect runner pane
-  map <Leader>vi :VimuxInspectRunner<CR>
-  " Close vim tmux runner opened by VimuxRunCommand
-  map <Leader>vq :VimuxCloseRunner<CR>
-  " Open vimux pane
-  map <Leader>vo :VimuxOpenPane<CR>
-  " Interrupt any command running in the runner pane
-  map <Leader>vx :VimuxInterruptRunner<CR>
-  " Zoom the runner pane (use <bind-key> z to restore runner pane)
-  map <Leader>vz :call VimuxZoomRunner()<CR>
+"** vim-rspec mappings
+  let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+  map <Leader>t :call RunCurrentSpecFile()<CR>
+  map <Leader>s :call RunNearestSpec()<CR>
+  map <Leader>l :call RunLastSpec()<CR>
+  map <Leader>a :call RunAllSpecs()<CR>
 
 "****
 "** Syntastic settings
@@ -251,7 +228,7 @@
   Plugin 'gmarik/Vundle.vim'
   Plugin 'heavenshell/vim-jsdoc' " JSDoc
   Plugin 'jelera/vim-javascript-syntax'
-  Plugin 'jgdavey/vim-turbux.git'
+  Plugin 'jgdavey/tslime.vim.git'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'kien/ctrlp.vim.git'
   Plugin 'Lokaltog/vim-powerline.git'
