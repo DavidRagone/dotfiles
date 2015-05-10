@@ -11,7 +11,8 @@ ZSH_THEME="dragone"
 
 # General aliases
 alias c="clear"
-alias wip="git add . && git commit -m 'WIP'"
+alias mux="tmux attach-session -t" # Connect to an existing tmux-session with the given name. Auto-completes!
+alias muxl="tmux ls"
 
 # Git aliases & functions
 alias gs="git status"
