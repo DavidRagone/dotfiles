@@ -6,12 +6,10 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 #   time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="dragone"
 #ZSH_THEME="afowler"
+ZSH_THEME="dragone"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# General aliases
 alias c="clear"
 alias wip="git add . && git commit -m 'WIP'"
 
@@ -22,22 +20,27 @@ alias gcm="git checkout master"
 alias gdm='git diff master'
 alias gd='git diff'
 alias grim='git rebase -i master'
+alias wip="git add . && git commit -m 'WIP'"
 alias gib="git branch"
 TODO() {
   # Prints the TODOs entered in code since the first time the current branch split off of master
   gd $(git log master... --oneline | tail -1 | cut -f 1 -d " ") | grep TODO
 }
 upstream() {
+  # Pushes to a remote branch on origin with the same name as the current branch,
+  #   e.g. equivalent to `git push -u origin foo` if you're on branch foo
   git push -u origin `git symbolic-ref --short HEAD`
 }
 
 # Functions
 top10() {
+  # TODO - is this working?
+  # Print list of top 10 most used commands (useful for figuring out what new
+  #   aliases/functions I should add)
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -20
 }
-
-# Update ctags for ruby files
 tagit() {
+  # Update ctags for ruby files
   echo "Updating ctags"
   ctags --tag-relative --exclude=.git --languages=ruby -R * `rvm gemdir`/gems/*
   echo "Ctags updated"
@@ -78,15 +81,16 @@ bindkey -v
 unsetopt correct_all
 unsetopt correct
 
-# attempt to stop auto-window naming
+# Don't auto-name new tmux windows
 DISABLE_AUTO_TITLE=true
 
 # increase scrollback lines
 set -g history-limit 10000
 
-# This loads NVM
+# Load NVM
 [[ -s /Users/dmragone/.nvm/nvm.sh ]] && . /Users/dmragone/.nvm/nvm.sh
 
+# TODO - clean up all the PATH references
 export PATH="$HOME/.bin:$PATH"
 export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
 
