@@ -16,6 +16,7 @@ alias muxl="tmux ls"
 
 # Git aliases & functions
 alias gs="git status"
+alias gp="git push"
 alias gco="git checkout"
 alias gcm="git checkout master"
 alias gdm='git diff master'
