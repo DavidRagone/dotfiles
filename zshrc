@@ -29,6 +29,7 @@ TODO() {
   gd $(git log master... --oneline | tail -1 | cut -f 1 -d " ") | grep TODO
 }
 upstream() {
+  # TODO - apparently (per @jonabrams) this can be done with git config push "current"
   # Pushes to a remote branch on origin with the same name as the current branch,
   #   e.g. equivalent to `git push -u origin foo` if you're on branch foo
   git push -u origin `git symbolic-ref --short HEAD`
@@ -44,7 +45,7 @@ top10() {
 tagit() {
   # Update ctags for ruby files
   echo "Updating ctags"
-  ctags --tag-relative --exclude=.git --languages=ruby -R * `rvm gemdir`/gems/*
+  ctags --tag-relative --exclude=.git --languages=ruby -R * `gem env gemdir`/gems/*
   echo "Ctags updated"
 }
 
