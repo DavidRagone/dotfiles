@@ -99,4 +99,4 @@ export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/us
 
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
-eval "$(rbenv init - zsh --no-rehash)"
+eval "$(rbenv init - --no-rehash zsh)"
