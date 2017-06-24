@@ -8,6 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="afowler"
 ZSH_THEME="dragone"
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # General aliases
 alias c="clear"
@@ -83,6 +85,10 @@ export EDITOR="vim"
 bindkey -v
 unsetopt correct_all
 unsetopt correct
+
+# From https://dougblack.io/words/zsh-vi-mode.html (and related to bindkey -v)
+# Reduces delay after hitting escape key to go to normal mode in shell
+export KEYTIMEOUT=1
 
 # Don't auto-name new tmux windows
 DISABLE_AUTO_TITLE=true
