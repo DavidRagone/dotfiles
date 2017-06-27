@@ -45,7 +45,7 @@ top10() {
 tagit() {
   # Update ctags for ruby files
   echo "Updating ctags"
-  ctags --tag-relative --exclude=.git --languages=ruby -R * `gem env gemdir`/gems/*
+  ctags --tag-relative --exclude=.git --exclude=db --exclude=docs --exclude=log --exclude=node_modules --exclude=public --exclude=script --exclude=tmp --languages=ruby -R * `gem env gemdir`/gems/*
   echo "Ctags updated"
 }
 
