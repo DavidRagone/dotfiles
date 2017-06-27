@@ -1,2 +1,3 @@
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export RBENV_ROOT=/usr/local/var/rbenv
+unset RBENV_ROOT
+eval "$(rbenv init -)"
