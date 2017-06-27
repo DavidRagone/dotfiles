@@ -50,6 +50,16 @@ tagit() {
   echo "Ctags updated"
 }
 
+# Identify who wrote a given file
+# Usage: `❯ whose lib/ats_systems/greenhouse_puller.rb`
+whose () {
+  echo "# Finding out who wrote $1\n"
+  echo "# Commits by author:"
+  hub shortlog -n -s $1 | cat
+  echo "\n# Lines in current version by author:"
+  hub ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD | sed -n 's/^author //p' | sort | uniq -c | sort -nr
+}
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
