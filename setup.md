@@ -10,8 +10,6 @@ chsh -s /bin/zsh
 brew install tmux
 brew install reattach-to-user-namespce
 sudo ln -s /usr/bin/llvm-gcc-4.2 /usr/bin/gcc-4.2
-curl -L https://get.rvm.io | bash -s stable --ruby
-source /Users/dmragone/.rvm/scripts/rvm #????
 brew install qt
 brew install ack
 
@@ -40,8 +38,6 @@ ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 psql -d postgres -h localhost
 http://xquartz.macosforge.com/landing
-
-rvm install ruby-1.9.3-head
 
 brew install nginx
 sudo cp doc/nginx.conf /usr/local/etc/nginx
