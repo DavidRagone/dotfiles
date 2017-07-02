@@ -130,7 +130,7 @@
     %s/\s\+$//e
     call cursor(l, c)
   endfun
-  autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
 " }}}
 
 "**** Disable jsDoc trying to steal <C-l> {{{
