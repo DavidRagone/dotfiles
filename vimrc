@@ -228,7 +228,7 @@
 " }}}
 
 "**** vim-rspec mappings {{{
-  let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+  let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n --fail-fast")'
   map <Leader>t :call RunCurrentSpecFile()<CR>
   map <Leader>s :call RunNearestSpec()<CR>
   map <Leader>l :call RunLastSpec()<CR>
@@ -239,6 +239,7 @@
   " Enable syntastic syntax checking
   let g:syntastic_enable_signs=1
   let g:syntastic_quiet_messages = {'level': 'warnings'}
+  let g:syntastic_javascript_checkers = ['eslint']
 " }}}
 
 "**** Tmux support {{{
@@ -283,6 +284,7 @@
   Plugin 'tpope/vim-dispatch'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-rails.git'
+  Plugin 'tpope/vim-jdaddy'
   Plugin 'vim-ruby/vim-ruby.git'
 
   " All of your Plugins must be added before the following line

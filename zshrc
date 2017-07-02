@@ -72,6 +72,7 @@
   alias grim='git rebase -i master'
   alias wip="git add . && git commit -m 'WIP'"
   alias gib="git branch"
+  alias fit="git push -u -f"
 # }}}
 
 #**** Custom functions {{{
