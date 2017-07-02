@@ -65,6 +65,15 @@
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
   " Add json syntax highlighting
   au BufNewFile,BufRead *.json set ft=javascript
+  " (Hopefully) removes the delay when hitting esc in insert mode
+  set noesckeys
+  set ttimeout
+  set ttimeoutlen=1
+  " Make it more obvious which paren I'm on
+  hi MatchParen cterm=none ctermbg=black ctermfg=yellow
+  " By default, vim thinks .md is Modula-2.
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+" }}}
 " }}}
 
 "**** Improved copy/paste {{{
