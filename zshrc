@@ -129,7 +129,8 @@
 
 #**** TODO - clean up all the PATH references {{{
   export PATH="$HOME/.bin:$PATH"
-  export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
+  export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
+  export GOPATH="$HOME/Projects/golang:$HOME/Projects/learning-time/go"
 # }}}
 
 #**** recommended by brew doctor {{{
