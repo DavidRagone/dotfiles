@@ -56,8 +56,11 @@
 #**** Aliases {{{
   # General aliases
   alias c="clear"
-  alias mux="tmux attach-session -t" # Connect to an existing tmux-session with the given name. Auto-completes!
+
+  # tmux aliases
+  alias mux="tmux -2 attach-session -t" # Connect to an existing tmux-session with the given name. Auto-completes!
   alias muxl="tmux ls"
+  alias nmux="tmux -2 new-session -s"
 
   # Git aliases & functions
   alias gs="git status"
@@ -126,7 +129,8 @@
 
 #**** TODO - clean up all the PATH references {{{
   export PATH="$HOME/.bin:$PATH"
-  export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
+  export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
+  export GOPATH="$HOME/Projects/golang:$HOME/Projects/learning-time/go"
 # }}}
 
 #**** recommended by brew doctor {{{
