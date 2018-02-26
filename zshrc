@@ -131,6 +131,24 @@
   [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # }}}
 
+#**** notes taking cli {{{
+  notes() {
+    local fpath=$HOME/notes.md
+    if [ "$1" = "vim" ]; then
+      vim + $fpath
+    elif [ "$1" = "date" ]; then
+      echo '# '`date +"%m-%d-%Y-%T"` >> $fpath
+      echo '---------------------' >> $fpath
+    elif [ "$1" = "" ]; then
+      less +G $fpath
+    else
+      echo -n '# '`date +"%m-%d-%Y-%T"` >> $fpath
+      echo -n ' --- ' >> $fpath
+      echo $@ >> $fpath
+    fi
+  }
+# }}}
+
 #**** Load NVM {{{
   [[ -s /Users/dmragone/.nvm/nvm.sh ]] && . /Users/dmragone/.nvm/nvm.sh
 # }}}
