@@ -1,3 +1,11 @@
+#**** For development at SQ {{{
+  source ~/Development/config_files/square/zshrc
+  source ~/Development/config_files/square/aliases
+
+  [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+  [[ -f "$HOME/.localaliases" ]] && source "$HOME/.localaliases"
+# }}}
+
 #**** References {{{
   # http://www.drbunsen.org/the-text-triumvirate/
   # https://dougblack.io/words/zsh-vi-mode.html
@@ -49,7 +57,7 @@
 
   # ZSH Local = where to put everything not to be shared across machines
   # Note that env will now be shared across machines, so not safe for passwords
-  source ~/.zsh-local
+  #source ~/.zsh-local
 
 # }}}
 
@@ -129,13 +137,12 @@
 
 #**** TODO - clean up all the PATH references {{{
   export PATH="$HOME/.bin:$PATH"
-  export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
-  export GOPATH="$HOME/Projects/golang:$HOME/Projects/learning-time/go"
-# }}}
-
-#**** recommended by brew doctor {{{
-  export PATH="/usr/local/bin:$PATH"
-  eval "$(rbenv init - --no-rehash zsh)"
+  # SQ puts go elsewhere
+  #export GOPATH="$HOME/Projects/golang:$HOME/Projects/learning-time/go"
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
