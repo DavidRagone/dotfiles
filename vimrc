@@ -298,6 +298,7 @@
   Plugin 'tpope/vim-jdaddy'
   Plugin 'vim-ruby/vim-ruby.git'
   Plugin 'fatih/vim-go'
+  Plugin 'vim-ember-hbs'
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
