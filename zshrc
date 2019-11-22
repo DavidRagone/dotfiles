@@ -172,3 +172,7 @@ if [ -f '/Users/davidr/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Expose deployment scripts
+export PATH=/Users/davidr/Development/ppw-scripts/bin:$PATH
+# Expose deployment scripts
+export PATH=/Users/davidr/Development/ppw-scripts/bin:$PATH
