@@ -42,6 +42,7 @@ source ./zshrc.square
   # Uncomment following line if you want red dots to be displayed while waiting for completion
   # COMPLETION_WAITING_DOTS="true"
 
+
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -97,6 +98,24 @@ source ./zshrc.square
   #   split off of master
   TODO() {
     gd $(git log master... --oneline | tail -1 | cut -f 1 -d " ") | grep TODO
+  }
+
+  # Figure out what % someone is in commits in the current repo over n months
+  most() {
+    output=$(git log --since=12.months --numstat --pretty="%ae %H" ":(exclude)protos" ":(exclude)mocks" ":(exclude)vendor"\
+      | sed 's/@.*//g' \
+      | awk '{if(NF==1){name=$1};if(NF==3){plus[name]+=$1;minus[name]+=$2}}END{for(name in plus){print name": +"plus[name]" -"minus[name]}}' \
+      | sort -k2 -gr \
+      | cat -n
+    )
+
+    if [ "$1" != "" ]
+    then
+      readonly person=$1
+      echo $output | grep $person
+    else
+      echo $output
+    fi
   }
 
   # Pushes to a remote branch on origin with the same name as the current branch,
