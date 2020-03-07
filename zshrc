@@ -1,4 +1,4 @@
-source ./zshrc.square
+source ~/dotfiles/zshrc.square
 
 #**** Future things {{{
   # https://github.com/Shougo/deoplete.nvim 
