@@ -56,6 +56,9 @@ source ./zshrc.square
 # }}}
 
 #**** Aliases {{{
+  # Play with this file a lot
+  alias resource="source ~/.zshrc"
+
   # General aliases
   alias c="clear"
 
@@ -75,6 +78,18 @@ source ./zshrc.square
   alias wip="git add . && git commit -m 'WIP'"
   alias gib="git branch"
   alias fit="git push -u -f"
+
+  # Directory jumping
+  alias d='dirs -v | head -10'
+  alias 1='cd -'
+  alias 2='cd -2'
+  alias 3='cd -3'
+  alias 4='cd -4'
+  alias 5='cd -5'
+  alias 6='cd -6'
+  alias 7='cd -7'
+  alias 8='cd -8'
+  alias 9='cd -9'
 # }}}
 
 #**** Custom functions {{{
@@ -165,4 +180,3 @@ if [ -f '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . 
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-# export PATH="$(brew --prefix qt@5.5)/bin:$PATH" - doesn't work
