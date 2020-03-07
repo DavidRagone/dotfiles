@@ -144,6 +144,10 @@ source ./zshrc.square
   bindkey -v # set vi mode in zsh
   export KEYTIMEOUT=1 # Reduce delay after hitting escape key to go to normal mode in shell
 
+  # Make ctrl+r history search work
+  bindkey "^R" history-incremental-pattern-search-backward
+  bindkey "^N" history-incremental-pattern-search-forward
+
   zle -N zle-line-init # Executed every time the line editor is started to read a new line of input.
   zle -N zle-keymap-select # Executed every time the keymap changes
 
@@ -152,6 +156,7 @@ source ./zshrc.square
       RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
       zle reset-prompt
   }
+
 # }}}
 
 #**** Setup autojump - use w/ `j directory` {{{
