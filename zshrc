@@ -202,5 +202,8 @@ if [ -f '/Users/davidr/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
+# To solve when it breaks: https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit#macOS-catalina-1015
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
