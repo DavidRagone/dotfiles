@@ -2,6 +2,7 @@
 
 "**** Reference material:
   " https://dougblack.io/words/a-good-vimrc.html
+  " https://github.com/sirupsen/dotfiles/blob/8d232bab79c0032af1b827ad523d77f0f8959037/home/.vimrc
   " (TO READ) http://mixandgo.com/blog/vim-config-for-rails-ninjas
 
 "**** General settings {{{
@@ -13,6 +14,8 @@
   syntax enable " TODO - same as below? (on vs enable)?
   syntax on
   syntax sync minlines=256
+  set history=1000 " Keep more history, default is 20
+  set mouse=v "Allow copy-pasting
   set nocursorcolumn
   set ruler
   set cursorline     " Highlight the current line (subtly)
@@ -291,7 +294,13 @@
   Plugin 'tpope/vim-jdaddy'
   Plugin 'vim-ruby/vim-ruby.git'
   Plugin 'fatih/vim-go'
-  Plugin 'vim-ember-hbs'
+  Plugin 'majutsushi/tagbar'
+    " tagbar settings {{{
+    nmap \l :TagbarToggle<CR>
+    map <C-W>[ :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+    let g:tagbar_compact = 1
+    let g:tagbar_indent = 1
+    " }}}
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
