@@ -242,6 +242,17 @@
   let g:syntastic_javascript_checkers = ['eslint']
 " }}}
 
+"**** golang settingns {{{
+  let g:go_disable_autoinstall = 0
+
+  " Highlight
+  let g:go_highlight_functions = 1  
+  let g:go_highlight_methods = 1  
+  let g:go_highlight_structs = 1  
+  let g:go_highlight_operators = 1  
+  let g:go_highlight_build_constraints = 1  
+" }}}
+
 "**** Tmux support {{{
   " allows cursor change in tmux mode
   if exists('$TMUX')
@@ -286,6 +297,8 @@
   Plugin 'tpope/vim-rails.git'
   Plugin 'tpope/vim-jdaddy'
   Plugin 'vim-ruby/vim-ruby.git'
+  Plugin 'fatih/vim-go'
+  Plugin 'vim-ember-hbs'
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required

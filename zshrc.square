@@ -1,0 +1,10 @@
+#**** For development at SQ {{{
+  source ~/Development/config_files/square/zshrc
+  source ~/Development/config_files/square/aliases
+
+  [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+  [[ -f "$HOME/.localaliases" ]] && source "$HOME/.localaliases"
+  # Expose deployment scripts
+  export PATH=/Users/davidr/Development/ppw-scripts/bin:$PATH
+# }}}
+

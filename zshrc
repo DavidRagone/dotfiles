@@ -1,3 +1,5 @@
+source ./zshrc.square
+
 #**** References {{{
   # http://www.drbunsen.org/the-text-triumvirate/
   # https://dougblack.io/words/zsh-vi-mode.html
@@ -49,11 +51,14 @@
 
   # ZSH Local = where to put everything not to be shared across machines
   # Note that env will now be shared across machines, so not safe for passwords
-  source ~/.zsh-local
+  #source ~/.zsh-local
 
 # }}}
 
 #**** Aliases {{{
+  # Play with this file a lot
+  alias resource="source ~/.zshrc"
+
   # General aliases
   alias c="clear"
 
@@ -73,6 +78,18 @@
   alias wip="git add . && git commit -m 'WIP'"
   alias gib="git branch"
   alias fit="git push -u -f"
+
+  # Directory jumping
+  alias d='dirs -v | head -10'
+  alias 1='cd -'
+  alias 2='cd -2'
+  alias 3='cd -3'
+  alias 4='cd -4'
+  alias 5='cd -5'
+  alias 6='cd -6'
+  alias 7='cd -7'
+  alias 8='cd -8'
+  alias 9='cd -9'
 # }}}
 
 #**** Custom functions {{{
@@ -123,19 +140,43 @@
   [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # }}}
 
+#**** notes taking cli {{{
+  notes() {
+    local fpath=$HOME/notes.md
+    if [ "$1" = "vim" ]; then
+      vim + $fpath
+    elif [ "$1" = "date" ]; then
+      echo '# '`date +"%m-%d-%Y-%T"` >> $fpath
+      echo '---------------------' >> $fpath
+    elif [ "$1" = "" ]; then
+      less +G $fpath
+    else
+      echo -n '# '`date +"%m-%d-%Y-%T"` >> $fpath
+      echo -n ' --- ' >> $fpath
+      echo $@ >> $fpath
+    fi
+  }
+# }}}
+
 #**** Load NVM {{{
-  [[ -s /Users/dmragone/.nvm/nvm.sh ]] && . /Users/dmragone/.nvm/nvm.sh
+  export NVM_DIR=~/.nvm
+  [[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # }}}
 
 #**** TODO - clean up all the PATH references {{{
   export PATH="$HOME/.bin:$PATH"
-  export PATH="~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
-  export GOPATH="$HOME/Projects/golang:$HOME/Projects/learning-time/go"
-# }}}
-
-#**** recommended by brew doctor {{{
-  export PATH="/usr/local/bin:$PATH"
-  eval "$(rbenv init - --no-rehash zsh)"
+  # SQ puts go elsewhere
+  #export GOPATH="$HOME/Projects/golang:$HOME/Projects/learning-time/go"
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/davidr/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/davidr/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
