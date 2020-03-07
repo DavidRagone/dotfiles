@@ -241,21 +241,6 @@
   Plugin 'jelera/vim-javascript-syntax'
   Plugin 'jgdavey/tslime.vim.git'
   Plugin 'kchmck/vim-coffee-script'
-  Plugin 'kien/ctrlp.vim.git' " Fuzzy file finder
-  "**** ctrlp settings {{{
-    nmap ; :CtrlPBuffer<CR>
-    let g:ctrlp_match_window_bottom = 0
-    " window on top
-    ":let g:ctrlp_match_window_reversed = 0
-    let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-    let g:ctrlp_working_path_mode = 0
-    let g:ctrlp_dotfiles = 0
-    let g:ctrlp_switch_buffer = 0
-    " John Lee recommendation
-    let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
-    " Make CtrlP use Ag for listing the files. Much faster and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " }}}
   Plugin 'Lokaltog/vim-powerline.git'
   "**** Powerline settings {{{
     set laststatus=2   " Always show the statusline
@@ -301,12 +286,18 @@
   map <C-W>[ :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
   let g:tagbar_compact = 1
   let g:tagbar_indent = 1
+  nmap ; :Files<CR>
   " }}}
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
   filetype plugin indent on    " required
-" }}}
+  " }}}
+    Plugin 'junegunn/fzf'
+    Plugin 'junegunn/fzf.vim'
+  " fzf settings {{{
+  command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/bundle/fzf.vim/bin/preview.sh {}']}, <bang>0)
+  " }}}
 
 " vim:foldmethod=marker:foldlevel=0
 
