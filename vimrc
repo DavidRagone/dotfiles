@@ -216,20 +216,21 @@
   endif
 " }}}
 
+"**** Vundle Settings {{{
+  " filetype off "old?
+
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  " " alternatively, pass a path where Vundle should install plugins
+  " "call vundle#begin('~/some/path/here')
+" }}}
+
 "**** Plugin List {{{
   Plugin 'benmills/vimux'
   Plugin 'briancollins/vim-jst'
   Plugin 'elixir-lang/vim-elixir'
   Plugin 'gmarik/Vundle.vim'
-  "**** Vundle Settings {{{
-    " filetype off "old?
-
-    " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-    " " alternatively, pass a path where Vundle should install plugins
-    " "call vundle#begin('~/some/path/here')
-  " }}}
   Plugin 'heavenshell/vim-jsdoc' " JSDoc
   "**** Disable jsDoc trying to steal <C-l> {{{
     let g:jsdoc_default_mapping = 0
