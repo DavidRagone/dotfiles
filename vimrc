@@ -8,7 +8,7 @@
 "**** General settings {{{
   set nocompatible   " Disable vi-compatibility
   let mapleader = "," " leader is comma (I believe default is \)
-  color vividchalk " best I've found so far for languages/filetypes I see often
+  color slate " vividchalk
   set guifont=monaco:h16
   set re=1
   syntax enable " TODO - same as below? (on vs enable)?
