@@ -1,2 +1,28 @@
 # TODO - add list of what I use
+brew install tmux
+brew install reattach-to-user-namespace
+brew install the_silver_searcher
+brew install ctags
+brew install gotags
+brew install postgres
+brew install yarn
+brew install fswatch
+brew install cmake
+brew install nvm
+brew install ember
+brew install graphviz
+brew install tree
+brew install presidio
+brew install node
+brew install gnupg
+brew install gpg
+brew install gnupg2
+brew install curl
+brew install supervisor
+brew install qt@5.5
+brew install python
+brew install pyenv
 brew install bat
+brew install fzf
+brew install vim
+
