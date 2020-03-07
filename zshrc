@@ -211,11 +211,21 @@ source ~/dotfiles/zshrc.square
 # vim:foldmethod=marker:foldlevel=0
 
 # To solve when it breaks: https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit#macOS-catalina-1015
+# TODO - seems every time homebrew updats, it runs across the bug:
+# > NOTE: If you get Error: qt@5.5: unknown version :mountain_lion, 
+#     comment line #25 in Formula/qt@5.5.rb
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-#**** Fancy fzf magic https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew {{{
+# TODO - maybe need:
+# If you need to have ruby first in your PATH run:
+#   echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
+
+#**** Fancy fzf magic https://github.com/junegunn/fzf {{{
+  # always have preview window and put it on top (b/c I often have split vert panes in tmux)
+  export FZF_DEFAULT_OPTS="--ansi --preview-window 'top:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # }}}
