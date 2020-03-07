@@ -221,73 +221,73 @@
   Plugin 'briancollins/vim-jst'
   Plugin 'elixir-lang/vim-elixir'
   Plugin 'gmarik/Vundle.vim'
-    "**** Vundle Settings {{{
-      " filetype off "old?
+  "**** Vundle Settings {{{
+    " filetype off "old?
 
-      " set the runtime path to include Vundle and initialize
-      set rtp+=~/.vim/bundle/Vundle.vim
-      call vundle#begin()
-      " " alternatively, pass a path where Vundle should install plugins
-      " "call vundle#begin('~/some/path/here')
-    " }}}
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    " " alternatively, pass a path where Vundle should install plugins
+    " "call vundle#begin('~/some/path/here')
+  " }}}
   Plugin 'heavenshell/vim-jsdoc' " JSDoc
-    "**** Disable jsDoc trying to steal <C-l> {{{
-      let g:jsdoc_default_mapping = 0
-      if !hasmapto('<Plug>(jsdoc)')
-        nnoremap <silent> <leader>d :call jsdoc#insert()<CR>
-      endif
-    " }}}
+  "**** Disable jsDoc trying to steal <C-l> {{{
+    let g:jsdoc_default_mapping = 0
+    if !hasmapto('<Plug>(jsdoc)')
+      nnoremap <silent> <leader>d :call jsdoc#insert()<CR>
+    endif
+  " }}}
   Plugin 'jelera/vim-javascript-syntax'
   Plugin 'jgdavey/tslime.vim.git'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'kien/ctrlp.vim.git' " Fuzzy file finder
-    "**** ctrlp settings {{{
-      nmap ; :CtrlPBuffer<CR>
-      let g:ctrlp_match_window_bottom = 0
-      " window on top
-      ":let g:ctrlp_match_window_reversed = 0
-      let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-      let g:ctrlp_working_path_mode = 0
-      let g:ctrlp_dotfiles = 0
-      let g:ctrlp_switch_buffer = 0
-      " John Lee recommendation
-      let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
-      " Make CtrlP use Ag for listing the files. Much faster and respects .gitignore
-      let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    " }}}
+  "**** ctrlp settings {{{
+    nmap ; :CtrlPBuffer<CR>
+    let g:ctrlp_match_window_bottom = 0
+    " window on top
+    ":let g:ctrlp_match_window_reversed = 0
+    let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+    let g:ctrlp_working_path_mode = 0
+    let g:ctrlp_dotfiles = 0
+    let g:ctrlp_switch_buffer = 0
+    " John Lee recommendation
+    let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
+    " Make CtrlP use Ag for listing the files. Much faster and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " }}}
   Plugin 'Lokaltog/vim-powerline.git'
-    "**** Powerline settings {{{
-      set laststatus=2   " Always show the statusline
-      set encoding=utf-8 " Necessary to show unicode glyphs
-      set t_Co=256       " Explicitly tell vim that the terminal supports 256
-      set showcmd        " Display incomplete commands
-      let g:Powerline_symbols='fancy' " Colors
-    " }}}
+  "**** Powerline settings {{{
+    set laststatus=2   " Always show the statusline
+    set encoding=utf-8 " Necessary to show unicode glyphs
+    set t_Co=256       " Explicitly tell vim that the terminal supports 256
+    set showcmd        " Display incomplete commands
+    let g:Powerline_symbols='fancy' " Colors
+  " }}}
   Plugin 'mileszs/ack.vim'
   Plugin 'pangloss/vim-javascript'
   Plugin 'pgr0ss/vimux-ruby-test'
   Plugin 'scrooloose/nerdtree.git'
-    "**** NERDTree settings {{{
-      let NERDTreeQuitOnOpen = 0 " Close NERDTree when closing open vim window
-      map <leader>nt :NERDTreeToggle<CR>
-      map <leader>nf :NERDTreeFind<CR>
-    " }}}
+  "**** NERDTree settings {{{
+    let NERDTreeQuitOnOpen = 0 " Close NERDTree when closing open vim window
+    map <leader>nt :NERDTreeToggle<CR>
+    map <leader>nf :NERDTreeFind<CR>
+  " }}}
   Plugin 'scrooloose/syntastic.git'
-    "**** Syntastic settings {{{
-      " Enable syntastic syntax checking
-      let g:syntastic_enable_signs=1
-      let g:syntastic_quiet_messages = {'level': 'warnings'}
-      let g:syntastic_javascript_checkers = ['eslint']
-    " }}}
+  "**** Syntastic settings {{{
+    " Enable syntastic syntax checking
+    let g:syntastic_enable_signs=1
+    let g:syntastic_quiet_messages = {'level': 'warnings'}
+    let g:syntastic_javascript_checkers = ['eslint']
+  " }}}
   Plugin 'slim-template/vim-slim'
   Plugin 'thoughtbot/vim-rspec'
-    "**** vim-rspec mappings {{{
-      let g:rspec_command = 'call Send_to_Tmux("rspec {spec} --fail-fast \n")'
-      map <Leader>t :call RunCurrentSpecFile()<CR>
-      map <Leader>s :call RunNearestSpec()<CR>
-      map <Leader>l :call RunLastSpec()<CR>
-      map <Leader>a :call RunAllSpecs()<CR>
-    " }}}
+  "**** vim-rspec mappings {{{
+    let g:rspec_command = 'call Send_to_Tmux("rspec {spec} --fail-fast \n")'
+    map <Leader>t :call RunCurrentSpecFile()<CR>
+    map <Leader>s :call RunNearestSpec()<CR>
+    map <Leader>l :call RunLastSpec()<CR>
+    map <Leader>a :call RunAllSpecs()<CR>
+  " }}}
   Plugin 'tpope/vim-dispatch'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-rails.git'
@@ -295,12 +295,12 @@
   Plugin 'vim-ruby/vim-ruby.git'
   Plugin 'fatih/vim-go'
   Plugin 'majutsushi/tagbar'
-    " tagbar settings {{{
-    nmap \l :TagbarToggle<CR>
-    map <C-W>[ :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-    let g:tagbar_compact = 1
-    let g:tagbar_indent = 1
-    " }}}
+  " tagbar settings {{{
+  nmap \l :TagbarToggle<CR>
+  map <C-W>[ :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+  let g:tagbar_compact = 1
+  let g:tagbar_indent = 1
+  " }}}
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
