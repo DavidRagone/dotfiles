@@ -1,5 +1,14 @@
 source ./zshrc.square
 
+#**** Future things {{{
+  # https://github.com/Shougo/deoplete.nvim 
+  #   A super fancy auto-complete that seems to be always on, but requires
+  #   Python 3 and maybe other stuff I don't want to deal with now
+  # https://github.com/tbodt/deoplete-tabnine
+  #   Thing that goes with the above
+  #   See https://github.com/sirupsen/dotfiles/blob/8d232bab79c0032af1b827ad523d77f0f8959037/home/.vimrc#L74-L88
+# }}}
+
 #**** References {{{
   # http://www.drbunsen.org/the-text-triumvirate/
   # https://dougblack.io/words/zsh-vi-mode.html
