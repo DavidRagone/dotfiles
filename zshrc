@@ -75,6 +75,7 @@ source ./zshrc.square
 
   # General aliases
   alias c="clear"
+  alias cat="bat" # https://github.com/sharkdp/bat
 
   # tmux aliases
   alias mux="tmux -2 attach-session -t" # Connect to an existing tmux-session with the given name. Auto-completes!
