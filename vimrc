@@ -222,7 +222,7 @@
   Plugin 'elixir-lang/vim-elixir'
   Plugin 'gmarik/Vundle.vim'
     "**** Vundle Settings {{{
-      filetype off "old?
+      " filetype off "old?
 
       " set the runtime path to include Vundle and initialize
       set rtp+=~/.vim/bundle/Vundle.vim
