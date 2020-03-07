@@ -14,6 +14,10 @@ source ./zshrc.square
   # https://dougblack.io/words/zsh-vi-mode.html
 # }}}
 
+#**** Blow a casket if this file isn't symlinked, b/c that's how I roll {{{
+  test -h ~/.zshrc || echo "~/.zshrc IS NO LONGER SIMLINKED!\n\nRun the following to fix:\nln -s ~/dotfiles/zshrc ~/.zshrc"
+# }}}
+
 #**** general zsh settings {{{
   DISABLE_AUTO_TITLE=true # Don't auto-name new tmux windows
   set -g history-limit 10000 # increase scrollback lines
