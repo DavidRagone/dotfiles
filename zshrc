@@ -1,10 +1,4 @@
-#**** For development at SQ {{{
-  source ~/Development/config_files/square/zshrc
-  source ~/Development/config_files/square/aliases
-
-  [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
-  [[ -f "$HOME/.localaliases" ]] && source "$HOME/.localaliases"
-# }}}
+source ./zshrc.square
 
 #**** References {{{
   # http://www.drbunsen.org/the-text-triumvirate/
@@ -163,16 +157,12 @@
 
 # vim:foldmethod=marker:foldlevel=0
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/davidr/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/davidr/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/davidr/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-# Expose deployment scripts
-export PATH=/Users/davidr/Development/ppw-scripts/bin:$PATH
-# Expose deployment scripts
-export PATH=/Users/davidr/Development/ppw-scripts/bin:$PATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$(brew --prefix qt@5.5)/bin:$PATH" - doesn't work
