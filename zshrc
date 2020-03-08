@@ -225,8 +225,19 @@ export PATH="$PATH:$HOME/.rvm/bin"
 #   echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
 
 #**** Fancy fzf magic https://github.com/junegunn/fzf {{{
-  # always have preview window and put it on top (b/c I often have split vert panes in tmux)
-  export FZF_DEFAULT_OPTS="--ansi --preview-window 'top:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  # Override: https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh#L29
+  fzf-file-widget() {
+    local opts=$FZF_DEFAULT_OPTS # Store b/c need to reset, don't want the below to be actual default (breaks for non-file searching)
+    # always have preview window and put it on top (b/c I often have split vert panes in tmux)
+    export FZF_DEFAULT_OPTS="--height 80% --preview-window 'top:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+    LBUFFER="${LBUFFER}$(__fsel)"
+    local ret=$?
+    zle reset-prompt
+    export FZF_DEFAULT_OPTS=$opts
+    return $ret
+  }
+  zle     -N   fzf-file-widget
+  bindkey '^T' fzf-file-widget
+  export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # }}}
