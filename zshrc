@@ -36,7 +36,8 @@ source ~/dotfiles/zshrc.square
   #   time that oh-my-zsh is loaded.
   #ZSH_THEME="robbyrussell"
   #ZSH_THEME="afowler"
-  ZSH_THEME="dragone"
+  ZSH_THEME="powerlevel9k/powerlevel9k" # $ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
   # Set to this to use case-sensitive completion
   # CASE_SENSITIVE="true"
 
