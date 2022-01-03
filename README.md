@@ -1,15 +1,17 @@
-#DavidRagone's dotfiles.
+# DavidRagone's dotfiles.
 
-##Usage
-####Clone repo
+## Usage
+#### Clone repo
+
 ```git clone https://github.com/DavidRagone/dotfiles.git```
-####Delete your existing related files
+
+#### Delete your existing related files
 For each of: .gitconfig, .oh-my-zsh/, .tmux.conf, .vimrc, .zprofile, .zshrc, either remove or rename (e.g. .gitconfig-old)
 
-####Symlink each of those files (or folder in the case of .oh-my-zsh/) to the dotfile repo
+#### Symlink each of those files (or folder in the case of .oh-my-zsh/) to the dotfile repo
 ```ln -s /actual-file ~/file-you-want-symlinked```
 
-####Switch to zsh
+#### Switch to zsh
 `chsh -s /bin/zsh`
 
 #### Install fonts
