@@ -1,4 +1,4 @@
-source ~/dotfiles/zshrc.square
+#source ~/dotfiles/zshrc.square
 
 #**** Future things {{{
   # https://github.com/Shougo/deoplete.nvim 
@@ -36,7 +36,8 @@ source ~/dotfiles/zshrc.square
   #   time that oh-my-zsh is loaded.
   #ZSH_THEME="robbyrussell"
   #ZSH_THEME="afowler"
-  ZSH_THEME="powerlevel9k/powerlevel9k" # $ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+  ZSH_THEME="dragone"
+  #ZSH_THEME="powerlevel9k/powerlevel9k" # $ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
   # Set to this to use case-sensitive completion
   # CASE_SENSITIVE="true"
@@ -216,10 +217,17 @@ source ~/dotfiles/zshrc.square
 # TODO - seems every time homebrew updats, it runs across the bug:
 # > NOTE: If you get Error: qt@5.5: unknown version :mountain_lion, 
 #     comment line #25 in Formula/qt@5.5.rb
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+#export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Using homebrew (at least on home machine, b/c this is the apple silicon magic) 
+#   via https://mac.install.guide/ruby/13.html
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
 
 # TODO - maybe need:
 # If you need to have ruby first in your PATH run:
