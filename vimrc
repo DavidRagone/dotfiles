@@ -298,6 +298,7 @@
   " fzf settings {{{
   command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/bundle/fzf.vim/bin/preview.sh {}']}, <bang>0)
   " }}}
+    Plugin 'github/copilot.vim'
 
 " vim:foldmethod=marker:foldlevel=0
 
