@@ -286,19 +286,23 @@
   map <C-W>[ :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
   let g:tagbar_compact = 1
   let g:tagbar_indent = 1
-  nmap ; :Files<CR>
   " }}}
 
-  " All of your Plugins must be added before the following line
-  call vundle#end()            " required
   filetype plugin indent on    " required
   " }}}
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
   " fzf settings {{{
+  " Initialize configuration dictionary
+  let g:fzf_vim = {}
   command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/bundle/fzf.vim/bin/preview.sh {}']}, <bang>0)
+  nmap ; :Files<CR>
+  nmap '' :Buffer<CR>
   " }}}
     Plugin 'github/copilot.vim'
+
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
 
 " vim:foldmethod=marker:foldlevel=0
 
