@@ -88,10 +88,10 @@
   alias gs="git status"
   alias gp="git push"
   alias gco="git checkout"
-  alias gcm="git checkout master"
-  alias gdm='git diff master'
+  alias gcm="git checkout main"
+  alias gdm='git diff main'
   alias gd='git diff'
-  alias grim='git rebase -i master'
+  alias grim='git rebase -i main'
   alias wip="git add . && git commit -m 'WIP'"
   alias gib="git branch"
   alias fit="git push -u -f"
@@ -111,9 +111,9 @@
 
 #**** Custom functions {{{
   # Print the TODOs entered in code since the first time the current branch
-  #   split off of master
+  #   split off of main
   TODO() {
-    gd $(git log master... --oneline | tail -1 | cut -f 1 -d " ") | grep TODO
+    gd $(git log main... --oneline | tail -1 | cut -f 1 -d " ") | grep TODO
   }
 
   # Figure out what % someone is in commits in the current repo over n months
